@@ -1,0 +1,38 @@
+<div
+infinite-scroll
+[infiniteScrollDistance]= "2"
+[infiniteScrollThrottle]="1000"
+(scrolled)="onScroll()"
+>
+<mat-accordion>
+ <app-expansion-panel [initiallyExpanded]="true">
+  <div class="header">Read me :D</div>
+  <div class ="content">
+    I hope that my app is is not the worst you ever saw :D I tried I lot of different things here and I hope you like it.
+  </div>
+</app-expansion-panel>
+    <mat-expansion-panel *ngFor= "let post of posts.slice(0, count)"
+     (opened)="panelOpenState = true"
+     (closed)="panelOpenState = false">
+      <mat-expansion-panel-header class= "header-look">
+        <mat-panel-title >{{post.title}} </mat-panel-title> 
+        <mat-panel-description class="slide-right">
+       {{ sumComments(post.id)}} comments
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div *ngFor="let comments of idComments">
+        <div *ngIf="comments.postId == post.id">
+          <mat-panel-description class= "description-panel-look">
+            {{comments.name}}
+          </mat-panel-description>
+          </div>
+      </div>
+      <mat-panel-description>
+        <button (click)= "viewDetails(post.id)" class= "btn-btn-primary">View more info</button>
+      </mat-panel-description>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div [ngClass]="{'hidden': !isLoading}" class="loading-animation">
+    <div class="spinner"></div>
+  </div>
+  </div> 

@@ -1,0 +1,10 @@
+<div class="expand-panel" [ngClass]="{ 'expanded': isExpanded }">
+    <div class="header" 
+    (click)="togglePanel()">
+      <ng-content select=".header"></ng-content>
+    </div>
+    <div class="content" *ngIf="isExpanded">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  

@@ -1,0 +1,18 @@
+<h2 class="p-2"> POST - {{ postDetails?.id }} {{ postDetails?.title }} </h2>
+<h4 class="p-2"> @{{userDetails?.username}} </h4>
+<hr/>
+<div *ngIf="editMode">
+  <form class="example-form">
+    <mat-form-field class="text-area">
+      <mat-label>Edit the post</mat-label>
+      <textarea matInput value={{postDetails?.body}}></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<mat-card *ngIf="!editMode" class="p-2">{{ postDetails?.body }}</mat-card>
+<hr/>
+<div class="edit-buttons m-2">
+  <button *ngIf="!editMode" (click)="edit()" mat-button color="primary">Edit post</button>
+  <button *ngIf="editMode" (click)="save()" mat-button color="warn">Save post</button>
+  <button *ngIf="!editMode" mat-button color="warn">Delete Post</button>
+</div>

@@ -1,0 +1,71 @@
+.mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+
+.btn-btn-primary {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.slide-right {
+  position: absolute;
+  right: 25px;
+}
+
+.header-look {
+  border: 1px solid 0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: darkmagenta;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: oblique;
+}
+
+.description-panel-look {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+mat-accordion {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.loading-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  /* Adjust the height as needed */
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  animation: spin 1s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
